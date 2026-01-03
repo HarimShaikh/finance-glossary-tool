@@ -1,0 +1,36 @@
+from sys import exit
+
+finance_glossary = { 
+    "ebitda": "Earnings Before Interest, Taxes, Depreciatoin, and Amortization. A measure of a company's overall financial performance.",
+    "liquidity": "The efficiency or ease with which an asset or security can be converted into cash.",
+    "leverage": "The use of borrowed money (debt) to finance the purchase of assets with the expectation that the income or capital gain from the new asset will exceed the cost of borrowing",
+    "solvency": "The ability of company to meet its long-term debts and financial obligations." ,
+    "amortization": "The practice of spreading an intangible asset's cost over its useful life.",
+    "equity": "The value of shares issued by the company, it represents the ownership of the shareholder in the company.",
+    "cagr": "Compound Annual Growth Rate. The mean annual growth rate of an investment over a specified period of time longer that one year.",
+    "roi": "Return on Investment. A ratio used to calculate the return you made of an investment: (Net Profit / Cost of Investment) * 100.",
+} # this is our dictionary. 
+
+def finance_tool(): # here we are creating a function called finance_tool
+    print("--- FINANCIAL GLOSSARY TOOL ---") # normal printing 
+    print("Words available: " + ", ".join(finance_glossary.keys())) # here we print just the words in our dictionary. WE are able to do this by putting in finance_glossary.keys() - so it only picks up keyvalue from the dictionaryies.
+    
+    while True: # the loop that we call
+        try: # we input the try function so incase any error pops up it can show what the error is. 
+            ans = input("\nEnter a term to define or exit to quit: ").lower() # here we ask the question 
+            
+            if ans == 'exit': # if statement, we add a condition here as if the user wants to exit the program they can so by typing exit.
+                print("Quitting Program!")
+                break
+
+            else: 
+                print(f"Definition: {finance_glossary[ans]}") # if they don't want to quit then we print the definition for the word that they have inputed. I skipped the step cause it just felt additional. 
+            
+        except KeyError: # keyerror used for dictionary, so if no value matches the key value in our dictionary - it showcases the below message. 
+            print(f"Sorry, The {ans} doesn't exit in our dictionary.") 
+        
+        except Exception as e: # now if any other expection arise print the below message. 
+            print(f"Unexpected error occured {e}.")
+
+
+finance_tool()
