@@ -1,2 +1,3 @@
-# finance-glossary-tool
-A Python-based terminal utility for financial analysts to lookup industry terminology using dictionary mapping.
+# Financial Glossary Tool
+
+A Python script designed to assist in learning core financial terminology. 
